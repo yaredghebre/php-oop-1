@@ -6,16 +6,16 @@ class Movie {
     public $title;
     public $director;
     public $year;
-    public $genre;
+    public $genres;
     public $country;
     public $rating;
 
     // COSTRUTTORE con i primi 4 campi 
-    function __construct($_title, $d_irector, $_year, $_genre) {
+    function __construct($_title, $_director, $_year, $_genres) {
         $this->title = $_title;
-        $this->director = $d_irector;
+        $this->director = $_director;
         $this->year = $_year;
-        $this->genre = $_genre;
+        $this->genres = $_genres;
     }
 
     // METODO per stammpare i dettagli del film
@@ -23,12 +23,14 @@ class Movie {
         echo "TITOLO: " . $this->title . "<br>";
         echo "REGISTA: ". $this->director . "<br>";
         echo "ANNO: ". $this->year . "<br>";
-        echo "GENERE: ". $this->genre . "<br>";
+
+        // IMPLODE per inserire più generi (concatena elementi ARRAY)
+        echo "GENERI: ". implode(", ", $this->genres)  . "<br>";
     }
 }
 
 // Creo un NEW oggetto MOVIE
-$movie = new Movie("Blade Runner 2049", "Denis Villeneuve", "2017", "Sci-Fi");
+$movie = new Movie("Blade Runner 2049", "Denis Villeneuve", "2017", ["Sci-Fi", "Action", "Mistery", "Drama"]);
 
 // Stampo 
 echo ("<h2>Film</h2>");
