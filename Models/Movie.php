@@ -1,5 +1,9 @@
 <?php
 
+/** ## Movie Class
+ * defines a movie class
+ * @author Yared
+ */
 class Movie
 {
 
@@ -12,6 +16,13 @@ class Movie
     public $rating;
 
     // COSTRUTTORE con i primi 4 campi 
+    /**
+     * @param String $_title
+     * @param String $_director
+     * @param Int $_year
+     * @param Array $_genres
+     */
+
     function __construct($_title, $_director, $_year, $_genres)
     {
         $this->title = $_title;
